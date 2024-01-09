@@ -18,6 +18,7 @@ class CounterDetailsBody extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     'You have pushed counter #${counter!.index} this many times:',
+                    textAlign: TextAlign.center,
                   ),
                   Text(
                     counter!.count.toString(),

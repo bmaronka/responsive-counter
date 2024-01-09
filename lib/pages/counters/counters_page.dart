@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
 import 'package:responsive_counter/pages/counters/body/counters_body.dart';
 import 'package:responsive_counter/pages/counters/cubit/counters_cubit.dart';
+import 'package:responsive_counter/utils/use_once.dart';
 
 class CountersPage extends HookWidget {
   const CountersPage({
@@ -19,6 +20,7 @@ class CountersPage extends HookWidget {
       cubit,
       buildWhen: _buildWhen,
     );
+    useOnce(cubit.init);
 
     return Scaffold(
       appBar: AppBar(

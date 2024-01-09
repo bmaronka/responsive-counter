@@ -25,6 +25,10 @@ class CounterDetailsCubit extends CounterCubit<CounterDetailsState> {
   Counter? _counter;
   StreamSubscription? _activeCounterSubscription;
 
+  void init() {
+    _countersService.getLastActiveCounter();
+  }
+
   Future<void> _activeCounterListener() async {
     await _activeCounterSubscription?.cancel();
     _activeCounterSubscription = _countersService.getActiveCounterStream().listen(_setCounter);
@@ -42,6 +46,7 @@ class CounterDetailsCubit extends CounterCubit<CounterDetailsState> {
 
     _counter = _counter!.copyWith(count: _counter!.count + 1);
     _counterDetailsService.notifyIncrement(_counter!);
+    _countersService.notifySetActiveCounter(_counter!);
     _emitBuild();
   }
 

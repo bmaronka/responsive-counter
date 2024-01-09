@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_counter/domain/counters/model/counter.dart';
+import 'package:responsive_counter/pages/counter_details/counter_details_page.dart';
 import 'package:responsive_counter/pages/counters/cubit/counters_cubit.dart';
 
 class CountersBody extends StatelessWidget {
@@ -37,6 +38,14 @@ class CountersBody extends StatelessWidget {
             title: Text('Counter #${counter.index}'),
             trailing: Text(counter.count.toString()),
             onTap: () {
+              if (isFullPage) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CounterDetailsPage(),
+                  ),
+                );
+              }
               cubit.setActiveCounter(counter);
             },
           );
