@@ -12,7 +12,7 @@ class CountersBody extends StatelessWidget {
   });
 
   final CountersCubit cubit;
-  final List<Counter> counters;
+  final Map<int, Counter> counters;
   final Counter? activeCounter;
   final bool isFullPage;
 
@@ -22,6 +22,10 @@ class CountersBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         itemBuilder: (context, index) {
           final counter = counters[index];
+
+          if (counter == null) {
+            return const SizedBox.shrink();
+          }
 
           return ListTile(
             shape: RoundedRectangleBorder(

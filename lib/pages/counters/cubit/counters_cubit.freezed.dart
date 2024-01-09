@@ -16,22 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CountersState {
-  List<Counter> get counters => throw _privateConstructorUsedError;
+  Map<int, Counter> get counters => throw _privateConstructorUsedError;
   Counter? get activeCounter => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Counter> counters, Counter? activeCounter)
+    required TResult Function(
+            Map<int, Counter> counters, Counter? activeCounter)
         build,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Counter> counters, Counter? activeCounter)? build,
+    TResult? Function(Map<int, Counter> counters, Counter? activeCounter)?
+        build,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Counter> counters, Counter? activeCounter)? build,
+    TResult Function(Map<int, Counter> counters, Counter? activeCounter)? build,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +65,7 @@ abstract class $CountersStateCopyWith<$Res> {
           CountersState value, $Res Function(CountersState) then) =
       _$CountersStateCopyWithImpl<$Res, CountersState>;
   @useResult
-  $Res call({List<Counter> counters, Counter? activeCounter});
+  $Res call({Map<int, Counter> counters, Counter? activeCounter});
 
   $CounterCopyWith<$Res>? get activeCounter;
 }
@@ -88,7 +90,7 @@ class _$CountersStateCopyWithImpl<$Res, $Val extends CountersState>
       counters: null == counters
           ? _value.counters
           : counters // ignore: cast_nullable_to_non_nullable
-              as List<Counter>,
+              as Map<int, Counter>,
       activeCounter: freezed == activeCounter
           ? _value.activeCounter
           : activeCounter // ignore: cast_nullable_to_non_nullable
@@ -117,7 +119,7 @@ abstract class _$$CountersStateBuildImplCopyWith<$Res>
       __$$CountersStateBuildImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Counter> counters, Counter? activeCounter});
+  $Res call({Map<int, Counter> counters, Counter? activeCounter});
 
   @override
   $CounterCopyWith<$Res>? get activeCounter;
@@ -141,7 +143,7 @@ class __$$CountersStateBuildImplCopyWithImpl<$Res>
       counters: null == counters
           ? _value._counters
           : counters // ignore: cast_nullable_to_non_nullable
-              as List<Counter>,
+              as Map<int, Counter>,
       activeCounter: freezed == activeCounter
           ? _value.activeCounter
           : activeCounter // ignore: cast_nullable_to_non_nullable
@@ -154,15 +156,15 @@ class __$$CountersStateBuildImplCopyWithImpl<$Res>
 
 class _$CountersStateBuildImpl implements _CountersStateBuild {
   const _$CountersStateBuildImpl(
-      {required final List<Counter> counters, required this.activeCounter})
+      {required final Map<int, Counter> counters, required this.activeCounter})
       : _counters = counters;
 
-  final List<Counter> _counters;
+  final Map<int, Counter> _counters;
   @override
-  List<Counter> get counters {
-    if (_counters is EqualUnmodifiableListView) return _counters;
+  Map<int, Counter> get counters {
+    if (_counters is EqualUnmodifiableMapView) return _counters;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_counters);
+    return EqualUnmodifiableMapView(_counters);
   }
 
   @override
@@ -197,7 +199,8 @@ class _$CountersStateBuildImpl implements _CountersStateBuild {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Counter> counters, Counter? activeCounter)
+    required TResult Function(
+            Map<int, Counter> counters, Counter? activeCounter)
         build,
   }) {
     return build(counters, activeCounter);
@@ -206,7 +209,8 @@ class _$CountersStateBuildImpl implements _CountersStateBuild {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Counter> counters, Counter? activeCounter)? build,
+    TResult? Function(Map<int, Counter> counters, Counter? activeCounter)?
+        build,
   }) {
     return build?.call(counters, activeCounter);
   }
@@ -214,7 +218,7 @@ class _$CountersStateBuildImpl implements _CountersStateBuild {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Counter> counters, Counter? activeCounter)? build,
+    TResult Function(Map<int, Counter> counters, Counter? activeCounter)? build,
     required TResult orElse(),
   }) {
     if (build != null) {
@@ -255,11 +259,11 @@ class _$CountersStateBuildImpl implements _CountersStateBuild {
 abstract class _CountersStateBuild
     implements CountersState, CountersStateBuilder {
   const factory _CountersStateBuild(
-      {required final List<Counter> counters,
+      {required final Map<int, Counter> counters,
       required final Counter? activeCounter}) = _$CountersStateBuildImpl;
 
   @override
-  List<Counter> get counters;
+  Map<int, Counter> get counters;
   @override
   Counter? get activeCounter;
   @override

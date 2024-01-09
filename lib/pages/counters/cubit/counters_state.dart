@@ -4,7 +4,7 @@ part of 'counters_cubit.dart';
 class CountersState with _$CountersState {
   @Implements<CountersStateBuilder>()
   const factory CountersState.build({
-    required List<Counter> counters,
+    required Map<int, Counter> counters,
     required Counter? activeCounter,
   }) = _CountersStateBuild;
 }
