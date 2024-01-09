@@ -3,7 +3,7 @@ import 'package:hooked_bloc/hooked_bloc.dart';
 import 'package:responsive_counter/constants/counter_page.dart';
 import 'package:responsive_counter/constants/screen_size.dart';
 import 'package:responsive_counter/injectable/injectable.dart';
-import 'package:responsive_counter/pages/counter_details_page.dart';
+import 'package:responsive_counter/pages/counter_details/counter_details_page.dart';
 import 'package:responsive_counter/pages/counters/counters_page.dart';
 import 'package:responsive_counter/widgets/counter_navigation.dart';
 
@@ -49,6 +49,7 @@ class _CounterAppState extends State<CounterApp> {
           Expanded(
             child: CountersPage(isFullPage: false),
           ),
+          VerticalDivider(),
           Expanded(
             child: CounterDetailsPage(),
           ),
