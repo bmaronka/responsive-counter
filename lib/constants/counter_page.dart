@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_counter/pages/counters_page.dart';
+import 'package:responsive_counter/pages/counters/counters_page.dart';
 import 'package:responsive_counter/pages/settings_page.dart';
 
 enum CounterPage {

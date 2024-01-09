@@ -24,7 +24,7 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i3.CarConnectAppBarCubit>(() => _i3.CarConnectAppBarCubit());
+    gh.factory<_i3.CountersCubit>(() => _i3.CountersCubit());
     return this;
   }
 }
