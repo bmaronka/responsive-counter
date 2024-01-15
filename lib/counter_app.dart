@@ -41,16 +41,16 @@ class _CounterAppState extends State<CounterApp> {
     final screenSize = getScreenSize(context);
     final orientation = MediaQuery.orientationOf(context);
 
-    void _onSelect(int index) => setState(() => _selectedPage = CounterPage.values.firstWhere((p) => p.index == index));
+    void onSelect(int index) => setState(() => _selectedPage = CounterPage.values.firstWhere((p) => p.index == index));
 
-    List<Widget> _buildLargeLayout() {
+    List<Widget> buildLargeLayout() {
       if (_selectedPage == CounterPage.counters) {
         return [
-          Expanded(
+          const Expanded(
             child: CountersPage(isFullPage: false),
           ),
-          VerticalDivider(),
-          Expanded(
+          const VerticalDivider(),
+          const Expanded(
             child: CounterDetailsPage(),
           ),
         ];
@@ -69,7 +69,7 @@ class _CounterAppState extends State<CounterApp> {
         (ScreenSize.large || ScreenSize.extraLarge, _) => null,
         (_, _) => CounterNavigation.bottomBar(
             selectedPage: _selectedPage,
-            onSelect: _onSelect,
+            onSelect: onSelect,
           ),
       },
       body: SafeArea(
@@ -78,9 +78,9 @@ class _CounterAppState extends State<CounterApp> {
               children: [
                 CounterNavigation.rail(
                   selectedPage: _selectedPage,
-                  onSelect: _onSelect,
+                  onSelect: onSelect,
                 ),
-                VerticalDivider(thickness: 1, width: 1),
+                const VerticalDivider(thickness: 1, width: 1),
                 Expanded(
                   child: _selectedPage.page,
                 ),
@@ -90,10 +90,10 @@ class _CounterAppState extends State<CounterApp> {
               children: [
                 CounterNavigation.rail(
                   selectedPage: _selectedPage,
-                  onSelect: _onSelect,
+                  onSelect: onSelect,
                 ),
-                VerticalDivider(thickness: 1, width: 1),
-                ..._buildLargeLayout(),
+                const VerticalDivider(thickness: 1, width: 1),
+                ...buildLargeLayout(),
               ],
             ),
           (_, _) => _selectedPage.page,

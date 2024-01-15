@@ -9,7 +9,7 @@ void main() => run();
 void run() {
   initializeApp();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 @visibleForTesting

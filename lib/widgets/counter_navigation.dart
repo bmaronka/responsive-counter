@@ -7,7 +7,7 @@ enum CounterNavigationType {
 }
 
 class CounterNavigation extends StatelessWidget {
-  CounterNavigation({
+  const CounterNavigation({
     required this.type,
     required this.selectedPage,
     required this.onSelect,
@@ -18,12 +18,14 @@ class CounterNavigation extends StatelessWidget {
   final CounterPage selectedPage;
   final Function(int) onSelect;
 
-  CounterNavigation.bottomBar({
+  const CounterNavigation.bottomBar({
+    super.key,
     required this.selectedPage,
     required this.onSelect,
   }) : type = CounterNavigationType.bottomBar;
 
-  CounterNavigation.rail({
+  const CounterNavigation.rail({
+    super.key,
     required this.selectedPage,
     required this.onSelect,
   }) : type = CounterNavigationType.rail;

@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 abstract class CounterCubit<State> extends BlocBase<State> {
-  CounterCubit(State state) : super(state);
+  CounterCubit(super.state);
 
   @override
   void emit(State state) {

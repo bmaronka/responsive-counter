@@ -12,7 +12,7 @@ class CounterDetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Center(
         child: counter == null
-            ? Text('Add first counter')
+            ? const Text('Add first counter')
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

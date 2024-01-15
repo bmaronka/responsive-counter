@@ -15,7 +15,7 @@ enum CounterPage {
   final IconData icon;
 
   Widget get page => switch (this) {
-        counters => CountersPage(),
-        settings => SettingsPage(),
+        counters => const CountersPage(),
+        settings => const SettingsPage(),
       };
 }
